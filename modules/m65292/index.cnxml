@@ -1,0 +1,421 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML" class="practice">
+  <title>Linear Regression and Correlation: Practice</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m65292</md:content-id>
+  <md:title>Linear Regression and Correlation: Practice</md:title>
+  <md:abstract>This module provides a practice of Linear Regression and Correlation as a part of Collaborative Statistics collection (col10522) by Barbara Illowsky and Susan Dean.</md:abstract>
+  <md:uuid>b2c6d1d4-11ee-4d63-a10a-11f0271fc5ce</md:uuid>
+</metadata>
+<featured-links>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit below.
+       Changes to the links section in the source will not be saved. -->
+    <link-group type="supplemental">
+      <link url="chapter 12.1 practice.doc" strength="3">Download handout (.doc)</link>
+      <link url="chapter 12.1 practice.pdf" strength="3">Download handout (.pdf)</link>
+    </link-group>
+  <!-- WARNING! The 'featured-links' section is read only. Do not edit above.
+       Changes to the links section in the source will not be saved. -->
+</featured-links>
+<content>
+    <section id="element-217"><title>Student Learning Outcomes</title>
+<list id="list-23453" list-type="bulleted"><item>The student will evaluate bivariate data and determine if a line is an appropriate fit to the data.</item>
+
+
+
+</list></section><section id="element-476"><title>Given</title>
+<para id="element-532">Below are real data for the first two decades of AIDS reporting. (<cite><cite-title>Source:  Centers for Disease Control and Prevention, National Center for HIV, STD, and TB Prevention</cite-title></cite>)
+</para><table id="element-806" summary="This table presents the year of reporting AIDS cases and deaths in the first column, number of AIDS cases diagnosed in the second column, and number of AIDS deaths in the third column.">
+
+<title>Adults and Adolescents only, United States </title>
+<tgroup cols="3"><colspec colnum="1" colname="c1"/>
+        <colspec colnum="2" colname="c2"/>
+        <colspec colnum="3" colname="c3"/>
+        <tbody>
+          <row>
+            <entry>
+              <emphasis>Year </emphasis>
+            </entry>
+            <entry>
+              <emphasis># AIDS cases diagnosed</emphasis>
+            </entry>
+            <entry>
+              <emphasis># AIDS deaths </emphasis>
+            </entry>
+          </row>
+          <row>
+            <entry>Pre-1981</entry>
+            <entry>91</entry>
+            <entry>29</entry>
+          </row>
+          <row>
+            <entry>1981</entry>
+            <entry>319</entry>
+            <entry>121</entry>
+          </row>
+          <row>
+            <entry>1982</entry>
+            <entry>1,170</entry>
+            <entry>453</entry>
+          </row>
+          <row>
+            <entry>1983</entry>
+            <entry>3,076</entry>
+            <entry>1,482</entry>
+          </row>
+          <row>
+            <entry>1984</entry>
+            <entry>6,240</entry>
+            <entry>3,466</entry>
+          </row>
+          <row>
+            <entry>1985</entry>
+            <entry>11,776</entry>
+            <entry>6,878</entry>
+          </row>
+          <row>
+            <entry>1986</entry>
+            <entry>19,032</entry>
+            <entry>11,987</entry>
+          </row>
+          <row>
+            <entry>1987</entry>
+            <entry>28,564</entry>
+            <entry>16,162</entry>
+          </row>
+          <row>
+            <entry>1988</entry>
+            <entry>35,447</entry>
+            <entry>20,868</entry>
+          </row>
+          <row>
+            <entry>1989</entry>
+            <entry>42,674</entry>
+            <entry>27,591</entry>
+          </row>
+          <row>
+            <entry>1990</entry>
+            <entry>48,634</entry>
+            <entry>31,335</entry>
+          </row>
+          <row>
+            <entry>1991</entry>
+            <entry>59,660</entry>
+            <entry>36,560</entry>
+          </row>
+          <row>
+            <entry>1992</entry>
+            <entry>78,530</entry>
+            <entry>41,055</entry>
+          </row>
+          <row>
+            <entry>1993</entry>
+            <entry>78,834</entry>
+            <entry>44,730</entry>
+          </row>
+          <row>
+            <entry>1994</entry>
+            <entry>71,874</entry>
+            <entry>49,095</entry>
+          </row>
+          <row>
+            <entry>1995</entry>
+            <entry>68,505</entry>
+            <entry>49,456</entry>
+          </row>
+          <row>
+            <entry>1996</entry>
+            <entry>59,347</entry>
+            <entry>38,510</entry>
+          </row>
+          <row>
+            <entry>1997</entry>
+            <entry>47,149</entry>
+            <entry>20,736</entry>
+          </row>
+          <row>
+            <entry>1998</entry>
+            <entry>38,393</entry>
+            <entry>19,005</entry>
+          </row>
+          <row>
+            <entry>1999</entry>
+            <entry>25,174</entry>
+            <entry>18,454</entry>
+          </row>
+          <row>
+            <entry>2000</entry>
+            <entry>25,522</entry>
+            <entry>17,347</entry>
+          </row>
+          <row>
+            <entry>2001</entry>
+            <entry>25,643</entry>
+            <entry>17,402</entry>
+          </row>
+          <row>
+            <entry>2002</entry>
+            <entry>26,464</entry>
+            <entry>16,371</entry>
+          </row>
+          <row>
+            <entry>
+              <emphasis>Total</emphasis>
+            </entry>
+            <entry>
+              <emphasis>802,118</emphasis>
+            </entry>
+            <entry>
+              <emphasis>489,093</emphasis>
+            </entry>
+          </row>
+        </tbody>
+      
+
+</tgroup>
+</table><note id="id3286141">We will use the columns “year” and “# AIDS cases diagnosed” for all questions unless otherwise stated.</note></section><section id="element-718"><title>Graphing</title>
+<para id="element-85">Graph “year” vs. “# AIDS cases diagnosed.” <emphasis>Plot the points on the graph located below in the section titled "Plot" </emphasis>. Do not include pre-1981. Label both axes with words. Scale both axes.
+</para></section><section id="element-1"><title>Data</title>
+<exercise id="element-54"><problem id="id4187966">
+  <para id="element-930">
+Enter your data into your calculator or computer. The pre-1981 data should not be included. Why is that so?
+  </para>
+</problem>
+</exercise></section><section id="element-341"><title>Linear Equation</title>
+<para id="element-730">Write the linear equation below, rounding to 4 decimal places:
+
+<note id="eip-id1164297263742">For any prediction questions, the answers are calculated using the least squares (best fit) line equation cited in the solution.</note>
+</para><exercise id="element-222"><problem id="id4176091">
+<para id="element-50234233422">
+Calculate the following:
+
+  <list id="list-234" list-type="labeled-item" mark-suffix=".">
+<item><label>a</label>
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>a</m:mi><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{a={}} {}</m:annotation></m:semantics></m:math></item>
+
+
+<item><label>b</label>
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>b</m:mi><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{b={}} {}</m:annotation></m:semantics></m:math></item>
+
+<item><label>c</label> 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mstyle fontstyle="italic"><m:mrow><m:mtext>corr</m:mtext></m:mrow></m:mstyle><m:mrow><m:mtext>.</m:mtext><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ ital "corr" "." ={}} {}</m:annotation></m:semantics></m:math></item>
+
+<item><label>d</label>
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>n</m:mi><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{n={}} {}</m:annotation></m:semantics></m:math>(# of pairs)</item></list></para>
+</problem>
+
+<solution id="id3370668">
+  <list id="list-345" list-type="labeled-item" mark-suffix=".">
+
+<item><label>a</label>
+<m:math>
+        <m:semantics>
+          <m:mrow>
+            <m:mstyle fontsize="12pt">
+              <m:mrow>
+                <m:mrow>
+                  <m:mi>a</m:mi>
+                  <m:mo stretchy="false">=</m:mo>
+                  <m:mtext>-3,448,225</m:mtext>
+                </m:mrow>
+              </m:mrow>
+            </m:mstyle>
+            <m:mrow/>
+          </m:mrow>
+          <m:annotation encoding="StarMath 5.0"> size 12{a="-3,448,225"} {}</m:annotation>
+        </m:semantics>
+      </m:math></item>
+     
+<item><label>b</label>
+      <m:math>
+        <m:semantics>
+          <m:mrow>
+            <m:mstyle fontsize="12pt">
+              <m:mrow>
+                <m:mrow>
+                  <m:mi>b</m:mi>
+                  <m:mo stretchy="false">=</m:mo>
+                  <m:mtext>1750</m:mtext>
+                </m:mrow>
+              </m:mrow>
+            </m:mstyle>
+            <m:mrow/>
+          </m:mrow>
+          <m:annotation encoding="StarMath 5.0"> size 12{b="1750"} {}</m:annotation>
+        </m:semantics>
+      </m:math>
+</item>      
+
+<item><label>c</label>
+      <m:math>
+        <m:semantics>
+          <m:mrow>
+            <m:mstyle fontsize="12pt">
+              <m:mrow>
+                <m:mrow>
+                  <m:mstyle fontstyle="italic">
+                    <m:mrow>
+                      <m:mtext>corr</m:mtext>
+                    </m:mrow>
+                  </m:mstyle>
+                  <m:mrow>
+                    <m:mtext>.</m:mtext>
+                    <m:mo stretchy="false">=</m:mo>
+                    <m:mn>0</m:mn>
+                  </m:mrow>
+                  <m:mtext>.</m:mtext>
+                  <m:mtext>4526</m:mtext>
+                </m:mrow>
+              </m:mrow>
+            </m:mstyle>
+            <m:mrow/>
+          </m:mrow>
+          <m:annotation encoding="StarMath 5.0"> size 12{ ital "corr" "." =0 "." "4526"} {}</m:annotation>
+        </m:semantics>
+      </m:math></item>
+    
+<item><label>d</label>      <m:math>
+        <m:semantics>
+          <m:mrow>
+            <m:mstyle fontsize="12pt">
+              <m:mrow>
+                <m:mrow>
+                  <m:mi>n</m:mi>
+                  <m:mo stretchy="false">=</m:mo>
+                  <m:mtext>22</m:mtext>
+                </m:mrow>
+              </m:mrow>
+            </m:mstyle>
+            <m:mrow/>
+          </m:mrow>
+          <m:annotation encoding="StarMath 5.0"> size 12{n="22"} {}</m:annotation>
+        </m:semantics>
+      </m:math>
+ </item>   </list>
+</solution>
+</exercise><exercise id="element-537"><problem id="id3371067">
+  <para id="element-803">equation: 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mi>y</m:mi><m:mo stretchy="false">^</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ { hat  {y}}={}} {}</m:annotation></m:semantics></m:math> 
+  </para>
+</problem>
+
+<solution id="id3238552">
+  <para id="element-747"><m:math>
+        <m:semantics>
+          <m:mrow>
+            <m:mstyle fontsize="12pt">
+              <m:mrow>
+                <m:mrow>
+                  <m:mover accent="true">
+                    <m:mi>y</m:mi>
+                    <m:mo stretchy="false">^</m:mo>
+                  </m:mover>
+                  <m:mo stretchy="false">=</m:mo>
+                  <m:mtext>-3,448,225</m:mtext>
+                </m:mrow>
+              </m:mrow>
+            </m:mstyle>
+            <m:mrow/>
+          </m:mrow>
+          <m:annotation encoding="StarMath 5.0"> size 12{ { hat  {y}}="-3,448,225"} {}</m:annotation>
+        </m:semantics>
+      </m:math>
+    
+
+      <m:math>
+        <m:semantics>
+          <m:mrow>
+            <m:mstyle fontsize="12pt">
+              <m:mrow>
+                <m:mrow>
+                  <m:mrow>
+                    <m:mo stretchy="false">+</m:mo>
+                    <m:mtext>1750</m:mtext>
+                  </m:mrow>
+                  <m:mi>x</m:mi>
+                </m:mrow>
+              </m:mrow>
+            </m:mstyle>
+            <m:mrow/>
+          </m:mrow>
+          <m:annotation encoding="StarMath 5.0"> size 12{+"1750"x} {}</m:annotation>
+        </m:semantics>
+      </m:math>
+    
+  </para>
+</solution>
+</exercise></section><section id="element-653"><title>Solve</title>
+<exercise id="element-578"><problem id="id3231872">
+  <para id="element-632">
+Solve.
+
+<list id="list-2352634" list-type="labeled-item" mark-suffix=".">
+<item><label>a</label>
+ When 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">=</m:mo><m:mtext>1985</m:mtext></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{x="1985"} {}</m:annotation></m:semantics></m:math>, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mi>y</m:mi><m:mo stretchy="false">^</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ { hat  {y}}={}} {}</m:annotation></m:semantics></m:math></item>
+
+<item><label>b</label>
+When 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">=</m:mo><m:mtext>1990</m:mtext></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{x="1990"} {}</m:annotation></m:semantics></m:math>, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mi>y</m:mi><m:mo stretchy="false">^</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ { hat  {y}}={}} {}</m:annotation></m:semantics></m:math></item>
+  </list></para>
+</problem>
+
+<solution id="id3763418">
+ <list id="list-3463146" mark-suffix="." list-type="labeled-item"><item><label>a</label>
+25,525</item>
+<item><label>b</label>
+34,275</item>
+  </list></solution>
+</exercise></section><section id="element-478"><title>Plot</title>
+<para id="element-263">
+Plot the 2 above points on the graph below. Then, connect the 2 points to form the regression line.
+</para>
+<media id="id4253169" alt="Blank graph with horizontal and vertical axes." display="block"><image src="../../media/9.png" mime-type="image/png" print-width="4in"/></media>
+<para id="element-2352642">	
+Obtain the graph on your calculator or computer.
+</para></section><section id="element-163"><title>Discussion Questions</title>
+<para id="element-844">Look at the graph above.
+</para><exercise id="element-508"><problem id="id4193945">
+  <para id="element-348">
+Does the line seem to fit the data? Why or why not?
+  </para>
+</problem>
+</exercise><exercise id="element-717"><problem id="id4247751">
+  <para id="element-160">
+	Do you think a linear fit is best? Why or why not?
+  </para>
+</problem>
+</exercise><exercise id="element-593"><problem id="id3281976">
+  <para id="element-659">Hand draw a smooth curve on the graph above that shows the flow of the data.
+  </para>
+</problem>
+</exercise><exercise id="element-658"><problem id="id4227065">
+  <para id="element-893">
+ What does the correlation imply about the relationship between time (years) and the number of diagnosed AIDS cases reported in the U.S.?
+  </para>
+</problem>
+</exercise><exercise id="element-352"><problem id="id3310573">
+  <para id="element-843">
+Why is “year” the independent variable and “# AIDS cases diagnosed.” the dependent variable (instead of the reverse)?
+  </para>
+</problem>
+</exercise><exercise id="element-560"><problem id="id3724131">
+  <para id="element-457">Solve. 
+<list id="list-23526" list-type="labeled-item" mark-suffix=".">
+<item><label>a</label>When 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mi>x</m:mi><m:mo stretchy="false">=</m:mo><m:mtext>1970</m:mtext></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{x="1970"} {}</m:annotation></m:semantics></m:math>, 
+<m:math><m:semantics><m:mrow><m:mstyle fontsize="12pt"><m:mrow><m:mrow><m:mover accent="true"><m:mi>y</m:mi><m:mo stretchy="false">^</m:mo></m:mover><m:mo stretchy="false">=</m:mo><m:mrow/></m:mrow></m:mrow></m:mstyle><m:mrow/></m:mrow><m:annotation encoding="StarMath 5.0"> size 12{ { hat  {y}}={}} {}</m:annotation></m:semantics></m:math>:</item>
+<item><label>b</label>Why doesn’t this answer make sense?</item>
+</list></para>
+</problem>
+
+<solution id="id3606176">
+  <list id="list-9726435" mark-suffix="." list-type="labeled-item"><item><label>a</label>
+-725
+</item>
+</list></solution>
+</exercise></section>   
+  </content>
+  
+</document>

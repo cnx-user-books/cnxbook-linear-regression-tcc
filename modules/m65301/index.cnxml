@@ -1,0 +1,27 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Linear Regression and Correlation: Summary</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m65301</md:content-id>
+  <md:title>Linear Regression and Correlation: Summary</md:title>
+  <md:abstract>This module provides a summary on Linear Regression and Correlation as a part of Collaborative Statistics collection (col10522) by Barbara Illowsky and Susan Dean.</md:abstract>
+  <md:uuid>2260d559-a871-493b-b219-5020100982a1</md:uuid>
+</metadata>
+
+<content>
+    <para id="delete_me"><emphasis>Bivariate Data:</emphasis> Each data point has two values. The form is <m:math><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:math>.</para><para id="element-590"><emphasis>Line of Best Fit or Least Squares Line (LSL):</emphasis>
+<m:math>
+<m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover>
+<m:mo>=</m:mo>
+<m:mi>a</m:mi>
+<m:mo>+</m:mo>
+<m:mtext>bx</m:mtext>
+</m:math>
+</para><para id="element-19"><m:math><m:mi>x</m:mi></m:math> = independent variable; 
+<m:math><m:mi>y</m:mi></m:math> = dependent variable</para><para id="element-806"><emphasis>Residual:</emphasis> <m:math><m:mtext>Actual y value</m:mtext><m:mo>-</m:mo><m:mtext>predicted y value</m:mtext><m:mo>=</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math></para><list id="element-274" list-type="enumerated"><title>Correlation Coefficient r:</title><item>Used to determine whether a line of best fit is good for prediction.</item>
+<item>Between -1 and 1 inclusive. The closer <m:math><m:mi>r</m:mi></m:math> is to 1 or -1, the closer the original points are to a straight line.</item>
+<item>If <m:math><m:mi>r</m:mi></m:math> is negative, the slope is negative. If  <m:math><m:mi>r</m:mi></m:math> is positive, the slope is positive.</item>
+<item>If <m:math><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>0</m:mn></m:math>, then the line is horizontal.</item></list><para id="element-745"><emphasis>Sum of Squared Errors (SSE):</emphasis> The smaller the <emphasis>SSE</emphasis>, the better the original set of
+points fits the line of best fit.</para><para id="element-802"><emphasis>Outlier:</emphasis> A point that does not seem to fit the rest of the data.</para>   
+  </content>
+  
+</document>

@@ -1,0 +1,33 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Linear Regression and Correlation: Summary of the Correlation Coefficient for Linear Regression</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m65298</md:content-id>
+  <md:title>Linear Regression and Correlation: Summary of the Correlation Coefficient for Linear Regression</md:title>
+  <md:abstract>This module provides an overview of Facts About the Correlation Coefficient for Linear Regression as a part of Collaborative Statistics collection (col10522) by Barbara Illowsky and Susan Dean.</md:abstract>
+  <md:uuid>5945f5cc-7cdc-40a2-bf10-7413cf86fd36</md:uuid>
+</metadata>
+
+<content>
+    <list id="element-759" list-type="bulleted"><item>A positive <m:math><m:mi>r</m:mi></m:math> means that when <m:math><m:mi>x</m:mi></m:math> increases, <m:math><m:mi>y</m:mi></m:math> increases and when <m:math><m:mi>x</m:mi></m:math> decreases, <m:math><m:mi>y</m:mi></m:math> decreases <emphasis>(positive correlation)</emphasis>.</item>
+<item>A negative <m:math><m:mi>r</m:mi></m:math> means that when <m:math><m:mi>x</m:mi></m:math> increases, <m:math><m:mi>y</m:mi></m:math> decreases and when <m:math><m:mi>x</m:mi></m:math> decreases, <m:math><m:mi>y</m:mi></m:math> increases <emphasis>(negative correlation)</emphasis>.</item>
+<item>An <m:math><m:mi>r</m:mi></m:math> of zero means there is absolutely no linear relationship between <m:math><m:mi>x</m:mi></m:math> and <m:math><m:mi>y</m:mi></m:math> <emphasis>(no correlation)</emphasis>.</item>
+<item>High correlation does not suggest that <m:math><m:mi>x</m:mi></m:math> causes <m:math><m:mi>y</m:mi></m:math> or <m:math><m:mi>y</m:mi></m:math> causes <m:math><m:mi>x</m:mi></m:math>. We say <emphasis>"correlation does not imply causation."</emphasis> For example, every person who learned
+math in the 17th century is dead. However, learning math does not necessarily cause
+death!</item></list><para id="element-227"><figure id="linrgs_facts_pics"><subfigure id="linrgs_facts1">
+      <title>Positive Correlation</title>
+      <media id="id1163697426963" alt="Scatterplot of points ascending from the lower left to the upper right."><image src="../../media/linrgs_facts1.png" mime-type="image/png" print-width="2in"/></media>
+  <caption>A scatter plot showing data with a positive correlation.</caption>
+  </subfigure>
+<subfigure id="linrgs_facts2">
+      <title>Negative Correlation</title>
+      <media id="id1163702721321" alt="Scatterplot of points descending from the upper left to the lower right."><image src="../../media/linrgs_facts2.png" mime-type="image/png" print-width="2in"/></media>
+<caption>A scatter plot showing data with a negative correlation.</caption>
+  </subfigure>
+<subfigure id="linrgs_facts3">
+      <title>Zero Correlation</title>
+      <media id="id1163697441415" alt="Scatterplot of points in a horizontal configuration."><image src="../../media/linrgs_facts3.png" mime-type="image/png" print-width="2in"/></media>
+<caption>A scatter plot showing data with zero correlation.</caption>
+  </subfigure></figure></para><para id="element-945">If <m:math><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>-1</m:mn></m:math> or <m:math><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>+1</m:mn></m:math>, then all the data points lie exactly on a straight line.</para><para id="element-49"><emphasis>If the linear correlation is strong</emphasis>, then the line can be used to predict a <m:math><m:mi>y</m:mi></m:math> value. </para>   
+  </content>
+  
+</document>

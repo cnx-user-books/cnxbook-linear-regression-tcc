@@ -1,0 +1,391 @@
+<document xmlns="http://cnx.rice.edu/cnxml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+  <title>Linear Regression and Correlation: Outliers</title>
+  <metadata xmlns:md="http://cnx.rice.edu/mdml">
+  <md:content-id>m65300</md:content-id>
+  <md:title>Linear Regression and Correlation: Outliers</md:title>
+  <md:abstract>Linear Regression and Correlation: Outliers is a part of Collaborative Statistics collection (col10522) by Barbara Illowsky and Susan Dean. The module has been modified to include a graphical method for identifying outliers contributed by Roberta Bloom.</md:abstract>
+  <md:uuid>1ea189aa-21db-4b41-abed-976e188ec08e</md:uuid>
+</metadata>
+
+<content>
+    <para id="delete_me">In some data sets, there are values <emphasis>(observed data points)</emphasis> called <term target-id="outlier">outliers</term>. <emphasis>Outliers are observed data points that are
+far from the least squares line.</emphasis> They have large "errors", where the "error" or residual is the vertical distance from the line to the point. </para><para id="eip-502">Outliers need to be examined
+closely. Sometimes, for some reason or another, they should not be included in the analysis of
+the data. It is possible that an outlier is a result of erroneous data. Other times, an outlier may
+hold valuable information about the population under study and should remain included in the data. The key is to carefully examine
+what causes a data point to be an outlier.</para><para id="eip-224">Besides outliers, a sample may contain one or a few points that are called <emphasis> influential points</emphasis>.  Influential points are observed data points that are far from the other observed data points in the horizontal direction. These points may have a big effect on the slope of the regression line. To begin to identify an influential point, you can remove it from the data set and see if the slope of the regression line is changed significantly.</para><para id="eip-755">Computers and many calculators can be used to identify outliers from the data. Computer output for regression analysis will often identify both outliers and influential points so that you can examine them.</para><para id="eip-511"><title>Identifying Outliers</title>We could guess at outliers by looking at a graph of the scatterplot and best fit line. However we would like some guideline as to how far away a point needs to be in order to be considered an outlier. <emphasis> As a rough rule of thumb, we can flag any point that is located further than two standard deviations above or below the best fit line as an outlier</emphasis>. The standard deviation used is the standard deviation of the residuals or errors. </para><para id="eip-526">We can do this visually in the scatterplot by drawing an extra pair of lines that are two standard deviations above and below the best fit line.  Any data points that are outside this extra pair of lines are flagged as potential outliers. Or we can do this numerically by calculating each residual and comparing it to twice the standard deviation. On the TI-83, 83+, or 84+, the graphical approach is easier.  The graphical procedure is shown first, followed by the numerical calculations. You would generally only need to use one of these methods.</para><example id="eip-837"><exercise id="element-12987"><problem id="id1170949520848">
+
+<para id="element-631">In the <link document="m17092" target-id="element-22">third exam/final exam example</link>, you can determine if there is an outlier
+or not. If there is an outlier, as an exercise, delete it and fit the remaining data to a new line. For this
+example, the new line ought to fit the remaining data better. This means the <emphasis>SSE</emphasis> should be
+smaller and the correlation coefficient ought to be closer to 1 or -1.
+</para>
+
+</problem>
+<solution id="id1170917505276">
+<para id="element-435"><title>Graphical Identification of Outliers</title>With the TI-83,83+,84+ graphing calculators, it is easy to
+ identify the outlier graphically and visually.  If we were to measure the vertical distance from any data point to the corresponding point on the line of best fit and that distance was equal to <m:math><m:mn>2</m:mn><m:mi>s</m:mi></m:math> or farther, then we would consider the data point to be "too far" from the line of best fit. We need to find and graph the lines that are two standard deviations below and above the regression line.  Any points that are outside these two lines are outliers. We will call these lines Y2 and Y3:</para>
+
+<para id="element-20965">As we did with the equation of the regression line and the correlation coefficient, we will use technology to calculate this standard deviation for us.  Using the <emphasis>LinRegTTest</emphasis> with this data, scroll down through the output screens to find <emphasis>s=16.412</emphasis></para>
+
+<para id="element-208">Line Y2=-173.5+4.83<m:math><m:mi>x</m:mi></m:math>-2(16.4) and line Y3=-173.5+4.83<m:math><m:mi>x</m:mi></m:math>+2(16.4)
+<newline/><newline/>
+where <m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math>=-173.5+4.83x is the line of best fit.  Y2 and Y3 have the same slope as the line of best fit.
+
+</para><para id="element-129853">Graph the scatterplot with the best fit line in equation Y1, then enter the two extra lines as Y2 and Y3 in the "Y="equation editor and press ZOOM 9. You will find that the only data point that is not between lines Y2 and Y3 is the point x=65, y=175. On the calculator screen it is just barely outside these lines. 
+
+The outlier is the student who had a grade of 65 on the third exam and 175 on the final exam; this point is further than 2 standard deviations away from the best fit line.</para><para id="element-664">Sometimes a point is so close to the lines used to flag outliers on the graph that it is difficult to tell if the point is between or outside the lines.  On a computer, enlarging the graph may help;  on a small calculator screen, zooming in may make the graph clearer.  Note that when the graph does not give a clear enough picture, you can use the numerical comparisons to identify outliers. </para><para id="element-1298531"><figure id="linrgout1ier"><media id="id1170917557779" alt="Scatterplot of data and best fit line of the exam score data, showing the lines two standard deviations above and below the best fit line.  The data value (65,175) lies slightly above the upper line identifying it as an outlier."><image src=" linrgoutlier.gif" mime-type="image/gif" print-width="3.0in"/></media></figure></para>
+ 
+
+
+<para id="element-1763"><title>Numerical Identification of Outliers</title>In the table below, the first two columns are the third exam and final exam data. 
+The third column shows the predicted
+ <m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math> 
+values calculated from the line of best fit: <m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math>=-173.5+4.83<m:math><m:mi>x</m:mi></m:math>. 
+The residuals, or errors, have been calculated in the fourth column of the table:   <m:math><m:mtext>observed y value</m:mtext><m:mo>−</m:mo><m:mtext>predicted y value</m:mtext><m:mo>=</m:mo><m:mi>y</m:mi><m:mo>−</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math>. </para><para id="element-973"><m:math><m:mi>s</m:mi></m:math> is the standard deviation of all the <m:math><m:mo/><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo/><m:mo>=</m:mo><m:mi> ε </m:mi></m:math> values where <m:math><m:mi>n</m:mi> </m:math> = the total number of data points. If each residual is calculated and squared, and the results are added, we get the SSE. The standard deviation of the residuals is calculated from the SSE as:  
+</para><para id="element-797"><m:math><m:mi>s</m:mi><m:mo>=</m:mo>
+<m:msqrt>
+<m:mfrac>
+<m:mrow><m:mtext>SSE</m:mtext></m:mrow>
+<m:mrow><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>2</m:mn></m:mrow>
+</m:mfrac>
+</m:msqrt>
+
+</m:math></para>
+
+<para id="element-42">Rather than calculate the value of <m:math><m:mi>s</m:mi></m:math> ourselves, we can find <m:math><m:mi>s</m:mi></m:math> using the computer or calculator.  For this example, the calculator function LinRegTTest found <m:math><m:mi>s = 16.4</m:mi></m:math> as the standard deviation of the residuals  
+<list id="set-list2" list-type="labeled-item" display="inline">
+<item>35</item>
+<item>-17</item>
+<item>16</item>
+<item>-6</item>
+<item>-19</item>
+<item>9</item>
+<item>3</item>
+<item>-1</item>
+<item>-10</item>
+<item>-9</item>
+<item>-1</item>
+</list>.
+
+</para><table id="element-4662" summary="The table contains 4 columns and 11 rows of calculation. The first two columns contain the x and y data values. The third column contains the values predicted by the regression line. The fourth column contains the errors or residuals, calculated as the observed y value minus the predicted value.">
+<tgroup cols="4"><colspec colnum="1" colname="header_c1"/>
+ <colspec colnum="2" colname="c2"/>
+ <colspec colnum="3" colname="c3"/>
+ <colspec colnum="4" colname="c4"/>
+<thead>
+  <row>
+    <entry><m:math><m:mi>x</m:mi></m:math></entry>
+    <entry><m:math><m:mi>y</m:mi></m:math></entry>
+    <entry><m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math></entry>
+    <entry><m:math><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math></entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>65   </entry>
+    <entry>175  </entry>
+    <entry>140  </entry>
+<entry><m:math><m:mn>175</m:mn><m:mo>-</m:mo><m:mn>140</m:mn><m:mo>=</m:mo><m:mn>35</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>67</entry>
+    <entry>133</entry>
+    <entry>150</entry>
+    <entry><m:math><m:mn>133</m:mn><m:mo>-</m:mo><m:mn>150</m:mn><m:mo>=</m:mo><m:mn>-17</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>185</entry>
+    <entry>169</entry>
+    <entry><m:math><m:mn>185</m:mn><m:mo>-</m:mo><m:mn>169</m:mn><m:mo>=</m:mo><m:mn>16</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>163</entry>
+    <entry>169</entry>
+
+    <entry><m:math><m:mn>163</m:mn><m:mo>-</m:mo><m:mn>169</m:mn><m:mo>=</m:mo><m:mn>-6</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>66</entry>
+    <entry>126</entry>
+    <entry>145</entry>
+    <entry><m:math><m:mn>126</m:mn><m:mo>-</m:mo><m:mn>145</m:mn><m:mo>=</m:mo><m:mn>-19</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>75</entry>
+    <entry>198</entry>
+    <entry>189</entry>
+
+
+    <entry><m:math><m:mn>198</m:mn><m:mo>-</m:mo><m:mn>189</m:mn><m:mo>=</m:mo><m:mn>9</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>67</entry>
+    <entry>153</entry>
+    <entry>150</entry>
+
+    <entry><m:math><m:mn>153</m:mn><m:mo>-</m:mo><m:mn>150</m:mn><m:mo>=</m:mo><m:mn>3</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>70</entry>
+    <entry>163</entry>
+    <entry>164</entry>
+    <entry><m:math><m:mn>163</m:mn><m:mo>-</m:mo><m:mn>164</m:mn><m:mo>=</m:mo><m:mn>-1</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>71</entry>
+    <entry>159</entry>
+    <entry>169</entry>
+    <entry><m:math><m:mn>159</m:mn><m:mo>-</m:mo><m:mn>169</m:mn><m:mo>=</m:mo><m:mn>-10</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>69</entry>
+    <entry>151</entry>
+    <entry>160</entry>
+    <entry><m:math><m:mn>151</m:mn><m:mo>-</m:mo><m:mn>160</m:mn><m:mo>=</m:mo><m:mn>-9</m:mn></m:math></entry>
+  </row>
+  <row>
+    <entry>69</entry>
+    <entry>159</entry>
+    <entry>160</entry>
+    <entry><m:math><m:mn>159</m:mn><m:mo>-</m:mo><m:mn>160</m:mn><m:mo>=</m:mo><m:mn>-1</m:mn></m:math></entry>
+  </row>
+</tbody>
+
+</tgroup>
+</table>
+
+
+<para id="element-508">We are looking for all data points for which the residual is greater than <m:math><m:mi>2s</m:mi></m:math>=2(16.4)=32.8 or less than -32.8. Compare these values to the residuals in column 4 of the table. The only such data point is the student who had a grade of 65 on the third exam and 175 on the final exam; the residual for this student is 35.</para><para id="element-8021"><title>How does the outlier affect the best fit line?</title>Numerically and graphically, we have identified the point (65,175) as an outlier. We should re-examine the data for this point to see if there are any problems with the data.  If there is an error we should fix the error if possible, or delete the data.  If the data is correct, we would leave it in the data set. <emphasis> For this problem, we will suppose that we examined the data and found that this outlier data was an error. Therefore we will continue on and delete the outlier, so that we can explore how it affects the results, as a learning experience. </emphasis> </para><para id="element-6691"><title>Compute a new best-fit line and correlation coefficient using the 10 remaining points:</title>On the TI-83, TI-83+, TI-84+ calculators, delete the outlier from L1 and L2. Using the LinRegTTest, the new line of best fit and the correlation coefficient are:</para>
+<para id="element-669"> <m:math>
+<m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover>
+<m:mo>=</m:mo><m:mn>-355.19</m:mn><m:mo>+</m:mo><m:mtext>7.39x</m:mtext>
+</m:math> and
+<m:math>
+<m:mi>r</m:mi><m:mo>=</m:mo><m:mn>0.9121</m:mn>
+</m:math></para><para id="element-101">The new line with <m:math><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>0.9121</m:mn></m:math> is a stronger correlation than the original (<m:math><m:mi>r</m:mi></m:math>=0.6631) because <m:math><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>0.9121</m:mn></m:math> is closer to 1. This means that the new line is a better fit to the 10 remaining data values. The line can better predict the final exam score given the third exam score.</para> 
+
+
+
+</solution>
+
+
+</exercise></example><para id="eip-424"><title>Numerical Identification of Outliers: Calculating <m:math><m:mi>s</m:mi></m:math> and Finding Outliers Manually</title></para><para id="eip-819">If you do not have the function LinRegTTest, then you can calculate the outlier in the first example by doing the following.
+<newline/><newline/>
+First, <emphasis>square each <m:math><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>|</m:mo></m:math></emphasis> (See the TABLE above):
+</para><para id="eip-152">The squares are 
+<list id="list1" list-type="labeled-item" display="inline"><item><m:math><m:msup><m:mn>35</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>17</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>16</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>6</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>19</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>9</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>3</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>1</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>10</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>9</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+<item><m:math><m:msup><m:mn>1</m:mn><m:mn>2</m:mn></m:msup></m:math></item>
+</list></para><para id="eip-912"><emphasis> Then, add (sum) all the <m:math><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>|</m:mo></m:math> squared terms</emphasis> using the formula</para><para id="eip-187"><m:math>
+<m:mover>
+<m:mrow>
+<m:munder>
+<m:mi>Σ</m:mi>
+<m:mtext>i = 1</m:mtext>
+</m:munder>
+</m:mrow>
+<m:mn>11</m:mn>
+</m:mover>
+<m:mo>(</m:mo><m:mo>|</m:mo><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mrow><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub><m:mo>|</m:mo><m:msup><m:mo>)</m:mo><m:mn>2</m:mn></m:msup>
+<m:mo>=</m:mo>
+<m:mover>
+<m:mrow>
+<m:munder>
+<m:mi>Σ</m:mi>
+<m:mtext>i = 1</m:mtext>
+</m:munder>
+</m:mrow>
+<m:mn>11</m:mn>
+</m:mover><m:msup><m:msub><m:mi>ε</m:mi><m:mi>i</m:mi></m:msub><m:mn>2</m:mn></m:msup>
+<m:mspace width="20pt"/>
+</m:math> 
+
+(Recall that <m:math><m:msub><m:mi>y</m:mi><m:mi>i</m:mi></m:msub><m:mo>-</m:mo><m:msub><m:mrow><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:mrow><m:mrow><m:mi>i</m:mi></m:mrow></m:msub><m:mo>=</m:mo><m:msub><m:mi>ε</m:mi><m:mi>i</m:mi></m:msub></m:math>.)</para><para id="eip-977"><m:math><m:mo>=</m:mo><m:msup><m:mn>35</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>17</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>16</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>6</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>19</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>9</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>3</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>1</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>10</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>9</m:mn><m:mn>2</m:mn></m:msup>
+<m:mo>+</m:mo><m:msup><m:mn>1</m:mn><m:mn>2</m:mn></m:msup></m:math>
+</para><para id="eip-684"><m:math><m:mo>=</m:mo><m:mn>2440</m:mn><m:mo>=</m:mo></m:math> <emphasis>SSE</emphasis>.  The result, <emphasis>SSE</emphasis> is the Sum of Squared Errors.</para><para id="eip-961"><emphasis>Next, calculate <m:math><m:mi>s</m:mi></m:math>, the standard deviation of all the <m:math><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mi>ε</m:mi></m:math> values where <m:math><m:mi>n</m:mi></m:math> = the total number of data points.</emphasis> </para><para id="eip-454">The calculation is 
+<m:math><m:mi>s</m:mi><m:mo>=</m:mo>
+<m:msqrt>
+<m:mfrac>
+<m:mrow><m:mtext>SSE</m:mtext></m:mrow>
+<m:mrow><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>2</m:mn></m:mrow>
+</m:mfrac>
+</m:msqrt>
+
+</m:math></para><para id="eip-284">For the third exam/final exam problem,
+<m:math><m:mi>s</m:mi><m:mo>=</m:mo>
+<m:msqrt>
+<m:mfrac>
+<m:mrow><m:mn>2440</m:mn></m:mrow>
+<m:mrow><m:mn>11</m:mn><m:mo>-</m:mo><m:mn>2</m:mn></m:mrow>
+</m:mfrac>
+</m:msqrt>
+<m:mo>=</m:mo><m:mn>16.47</m:mn>
+</m:math></para><para id="eip-799">Next, multiply <m:math><m:mi>s</m:mi></m:math> by <m:math><m:mn>1.9</m:mn></m:math>:
+<newline/>
+<m:math><m:mo>(</m:mo><m:mn>1.9</m:mn><m:mo>)</m:mo><m:mo>⋅</m:mo><m:mo>(</m:mo><m:mn>16.47</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>31.29</m:mn></m:math>
+<newline/>
+31.29 is almost 2 standard deviations away from the mean of the <m:math><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover></m:math> values.</para><para id="eip-28">If we were to measure the vertical distance from any data point to the corresponding point on the line of best fit and that distance is at least  <m:math><m:mn>1.9</m:mn><m:mi>s</m:mi></m:math>, then we would consider the data point to be "too far" from the line of best fit. We call that point a <emphasis>potential outlier</emphasis>.</para><para id="eip-130">For the example, if any of the <m:math><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>|</m:mo></m:math> values are <emphasis>at least</emphasis> 31.29, the corresponding
+<m:math><m:mo>(</m:mo><m:mi>x</m:mi><m:mo>,</m:mo><m:mi>y</m:mi><m:mo>)</m:mo></m:math> data point is a potential outlier.</para><para id="eip-696">For the third exam/final exam problem, all the <m:math><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>|</m:mo></m:math>'s are less than 31.29 except for the
+first one which is 35.</para><para id="eip-994"><m:math><m:mn>35</m:mn><m:mo>&gt;</m:mo><m:mn>31.29</m:mn><m:mspace width="20pt"/></m:math>
+That is, <m:math><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>|</m:mo><m:mo>≥</m:mo><m:mo>(</m:mo><m:mn>1.9</m:mn><m:mo>)</m:mo><m:mo>⋅</m:mo><m:mo>(</m:mo><m:mi>s</m:mi><m:mo>)</m:mo></m:math></para><para id="eip-980">The point which corresponds to <m:math><m:mo>|</m:mo><m:mi>y</m:mi><m:mo>-</m:mo><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>|</m:mo><m:mo>=</m:mo><m:mn>35 </m:mn></m:math> is <m:math><m:mo>(</m:mo><m:mn>65</m:mn><m:mo>,</m:mo><m:mn>175</m:mn><m:mo>)</m:mo></m:math>. <emphasis>Therefore, the data point
+<m:math><m:mo>(</m:mo><m:mn>65</m:mn><m:mo>,</m:mo><m:mn>175</m:mn><m:mo>)</m:mo></m:math> is a potential outlier.</emphasis> For this example, we will delete it. (Remember, we do not always
+delete an outlier.) 
+<newline/><newline/>The next step is to compute a new best-fit line using the 10 remaining
+points. The new line of best fit and the correlation coefficient are:</para><para id="eip-451"><m:math>
+<m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover>
+<m:mo>=</m:mo><m:mn>-355.19</m:mn><m:mo>+</m:mo><m:mtext>7.39</m:mtext><m:mi>x</m:mi>
+</m:math> and
+<m:math>
+<m:mi>r</m:mi><m:mo>=</m:mo><m:mn>0.9121</m:mn>
+</m:math></para><example id="element-824"><exercise id="element-12623">
+
+<problem id="id1171155161094">
+
+<para id="element-802">Using this new line of best fit (based on the remaining 10 data points), what would a
+student who receives a 73 on the third exam expect to receive on the final exam? Is this the same as the prediction made using the original line?
+</para>
+</problem>
+
+<solution id="id1171158788502" print-placement="here">
+ <para id="element-12623s">Using the new line of best fit, <m:math> 
+<m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover>
+<m:mo>=</m:mo><m:mn>-355.19</m:mn><m:mo>+</m:mo><m:mtext>7.39(73)</m:mtext>
+<m:mo> = 184.28</m:mo></m:math>.  A student who scored 73 points on the third exam would expect to earn 184 points on the final exam. 
+<newline/><newline/>
+The original line predicted <m:math>
+<m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover>
+<m:mo>=</m:mo><m:mn>-173.51</m:mn><m:mo>+</m:mo><m:mtext>4.83(73)</m:mtext>
+<m:mo> = 179.08</m:mo></m:math> so the prediction using the new line with the outlier eliminated differs from the original prediction.
+ </para></solution>
+</exercise>
+</example><example id="element-986"><para id="element-719">(<cite><cite-title>From The Consumer Price Indexes Web site</cite-title></cite>) The Consumer Price Index
+(CPI) measures the average change over time in the prices paid by urban consumers for
+consumer goods and services. The CPI affects nearly all Americans because of the many ways
+it is used. One of its biggest uses is as a measure of inflation. By providing information about
+price changes in the Nation's economy to government, business, and labor, the CPI helps them
+to make economic decisions. The President, Congress, and the Federal Reserve Board use the
+CPI's trends to formulate monetary and fiscal policies.  In the following table, <m:math><m:mi>x</m:mi></m:math> is the year and <m:math><m:mi>y</m:mi></m:math> is the CPI. 
+</para><table id="element-127" summary="">
+<title>Data:</title>
+<tgroup cols="2"><thead>
+  <row>
+    <entry align="center"><m:math><m:mi>x</m:mi></m:math></entry>
+    <entry align="center"><m:math><m:mi>y</m:mi></m:math></entry>
+  </row>
+</thead>
+<tbody>
+  <row>
+    <entry>1915  </entry>
+    <entry>10.1  </entry>
+  </row>
+  <row>
+    <entry>1926</entry>
+    <entry>17.7</entry>
+  </row>
+  <row>
+    <entry>1935</entry>
+    <entry>13.7</entry>
+  </row>
+  <row>
+    <entry>1940</entry>
+    <entry>14.7</entry>
+  </row>
+  <row>
+    <entry>1947</entry>
+    <entry>24.1</entry>
+  </row>
+  <row>
+    <entry>1952</entry>
+    <entry>26.5</entry>
+  </row>
+  <row>
+    <entry>1964</entry>
+    <entry>31.0</entry>
+  </row>
+  <row>
+    <entry>1969</entry>
+    <entry>36.7</entry>
+  </row>
+  <row>
+    <entry>1975</entry>
+    <entry>49.3</entry>
+  </row>
+  <row>
+    <entry>1979</entry>
+    <entry>72.6</entry>
+  </row>
+  <row>
+    <entry>1980</entry>
+    <entry>82.4</entry>
+  </row>
+  <row>
+    <entry>1986</entry>
+    <entry>109.6</entry>
+  </row>
+  <row>
+    <entry>1991</entry>
+    <entry>130.7</entry>
+  </row>
+  <row>
+    <entry>1999</entry>
+    <entry>166.6</entry>
+  </row>
+</tbody>
+
+
+
+</tgroup>
+</table>
+
+
+<exercise id="element-603"><problem id="id1171166081082">
+
+    <list id="list3" list-type="bulleted"><item>Make a scatterplot of the data.</item>
+<item>Calculate the least squares line. Write the equation in the form <m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mi>a</m:mi><m:mo>+</m:mo><m:mtext>b</m:mtext><m:mi>x</m:mi></m:math>.</item>
+<item>Draw the line on the scatterplot.</item>
+<item>Find the correlation coefficient. Is it significant?</item>
+<item>What is the average CPI for the year 1990?</item>
+</list></problem>
+
+<solution id="id1171157206888">
+  <list id="element-298" list-type="bulleted"><item>Scatter plot and line of best fit.</item>
+<item><m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mn>-3204</m:mn><m:mo>+</m:mo><m:mtext>1.662</m:mtext><m:mi>x</m:mi></m:math> is the equation of the line of best fit.</item>
+<item><m:math><m:mi>r</m:mi><m:mo>=</m:mo><m:mn>0.8694</m:mn></m:math></item>
+<item>The number of data points is <m:math><m:mi>n</m:mi><m:mo>=</m:mo><m:mn>14</m:mn></m:math>. Use the 95% Critical Values of the Sample Correlation Coefficient table at the end of Chapter 12. <m:math><m:mi>n</m:mi><m:mo>-</m:mo><m:mn>2</m:mn><m:mo>=</m:mo><m:mn>12</m:mn></m:math>. The
+corresponding critical value is 0.532. Since <m:math><m:mn>0.8694</m:mn><m:mo>&gt;</m:mo><m:mn>0.532</m:mn></m:math>, <m:math><m:mi>r</m:mi></m:math> is significant.</item>
+<item><m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mn>-3204</m:mn><m:mo>+</m:mo><m:mn>1.662</m:mn><m:mo>(</m:mo><m:mn>1990</m:mn><m:mo>)</m:mo><m:mo>=</m:mo><m:mn>103.4</m:mn></m:math> CPI</item>
+<item> Using the calculator LinRegTTest, we find that s = 25.4 ; graphing the lines Y2=-3204+1.662X-2(25.4) and Y3=-3204+1.662X+2(25.4) shows that no data values are outside those lines, identifying no outliers. (Note that the year 1999 was very close to the upper line, but still inside it.)</item></list><figure id="linrgs_out1"><media id="id1171151867848" alt="Scatter plot and line of best fit of the consumer price index data, on the y-axis, and year data, on the x-axis."><image src="../../media/linrgs_out1.png" mime-type="image/png" print-width="3.5in"/></media></figure>
+</solution>
+</exercise><note id="eip-413">In the example, notice the pattern of the points compared to the line.  Although the correlation coefficient is significant, the pattern in the scatterplot indicates that a curve would be a more appropriate model to use than a line.  In this example, a statistician should prefer to use other methods to fit a curve to this data, rather than model the data with the line we found. In addition to doing the calculations, it is always important to look at the scatterplot when deciding whether a linear model is appropriate.</note><para id="eip-983">If you are interested in seeing more years of data, visit the Bureau of Labor Statistics CPI website ftp://ftp.bls.gov/pub/special.requests/cpi/cpiai.txt ; our data is taken from the column entitled "Annual Avg." (third column from the right). For example you could add more current years of data.  Try adding the more recent years 2004 : CPI=188.9,  2008 : CPI=215.3 and 2011: CPI=224.9.  See how it affects the model. 
+
+(Check: <m:math><m:mover><m:mi>y</m:mi><m:mo>^</m:mo></m:mover><m:mo>=</m:mo><m:mn>-4436</m:mn><m:mo>+</m:mo><m:mtext>2.295</m:mtext><m:mi>x</m:mi></m:math>. <m:math><m:mi>r = 0.9018</m:mi></m:math>.  Is <m:math><m:mi>r</m:mi></m:math> significant?  Is the fit better with the addition of the new points?)</para></example><para id="eip-457">**With contributions from Roberta Bloom</para>   
+  </content>
+  <glossary>
+<definition id="outlier">
+    <term>Outlier</term>
+    <meaning id="id1171166689919">
+   An observation that does not fit the rest of the data.
+    </meaning>
+  </definition>
+</glossary>
+</document>
